@@ -26,7 +26,7 @@ public class DemoApplicationTests {
     private static final String TEST_CONTENT = "Test body content Test body content Test body content Test body content Test body content Test body content Test body content Test body content Test body content Test body content Test body content Test body content";
 
     @Test
-    public void noReproBufferLeakOnTimeout() {
+    public void reactorNetty() {
         stubFor(get("/testEndpoint/").willReturn(
                     aResponse()
                         .withStatus(200)
@@ -56,7 +56,7 @@ public class DemoApplicationTests {
     }
 
     @Test
-    public void reproBufferLeakOnTimeout() {
+    public void webClient() {
         stubFor(get("/testEndpoint/").willReturn(
                     aResponse()
                         .withStatus(200)

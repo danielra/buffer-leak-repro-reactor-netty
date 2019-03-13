@@ -37,4 +37,5 @@ dependencies {
 
 test {
     systemProperty "io.netty.leakDetection.level", "paranoid"
+    systemProperty "io.netty.leakDetection.targetRecords", "100"
 }
