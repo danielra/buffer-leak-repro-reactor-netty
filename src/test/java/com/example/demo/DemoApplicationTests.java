@@ -42,7 +42,7 @@ public class DemoApplicationTests {
                                                 .aggregate()
                                                 .asString()
                                                 .timeout(Duration.ofMillis(ThreadLocalRandom.current().nextInt(1, 35)))
-                                                .block();
+                                                .block(Duration.ofMillis(100));
                 System.out.println("HERE: " + responseContent);
             } catch (RuntimeException re) {
                 System.out.println("HERE: timeout exception: " + re.toString());
@@ -71,7 +71,7 @@ public class DemoApplicationTests {
                                                 .retrieve()
                                                 .bodyToMono(String.class)
                                                 .timeout(Duration.ofMillis(ThreadLocalRandom.current().nextInt(1, 35)))
-                                                .block();
+                                                .block(Duration.ofMillis(100));
                 System.out.println("HERE: " + responseContent);
             } catch (RuntimeException re) {
                 System.out.println("HERE: timeout exception: " + re.toString());
